@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    var name= 'IWI';
+function testScopes() {
+    var x = 1;
+    let y = 2;
+    const z = 3;
+    document.write("Vivek"+"<br>");
+    document.write("Functional block:", x, y, z+"<br>");
+    if (true) {
+        var x = 10;
+        let y = 20;
+        const z = 30;
+        document.write("Inside block:", x, y, z+"<br>");
+    }
+    document.write("Outside block:", x, y, z+"<br>");
+}
+testScopes();
+</script>
+</body>
+</html>

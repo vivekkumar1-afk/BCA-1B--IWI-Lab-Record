@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>Form Validation</title>
+</head>
+<b>
+
+<h3>Simple Form Validation using JavaScript</h3>
+
+<form id="myForm" onsubmit="return validateForm()">
+    Name: 
+    <input type="text" id="name" oninput="clearMessage()"><br><br>
+    Email: 
+    <input type="text" id="email" oninput="clearMessage()"><br><br>
+    Feedback:
+    <input type="text" id="feedback" oninput="clearMessage()"><br><br>
+
+    <button type="submit">Submit</button><br>
+    <lable for="address"> Note: </lable> <br>
+        <textarea id="address" rows="2" cols="20">write here,FEEDBACK </textarea>
+</form>
+
+<p id="msg" style="color:red;"></p>
+
+<script>
+    // Function runs when user submits the form
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        // Empty name check
+        if (name.trim() === "") {
+            alert("Name cannot be empty!");
+            document.getElementById("msg").innerText = "Please enter your name.";
+            return false; // stop form submission
+        }
+
+        // Simple email check
+        if(email.trim() === "" || !email.includes("@")) {
+            alert("Please enter a valid email!");
+            document.getElementById("msg").innerText = "Invalid email format.";
+            return false;
+        }
+        alert("Form submitted successfully!");
+        return true; // allow submission
+    }
+    function clearMessage() {
+        document.getElementById("msg").innerText = "";
+    }
+</script>
+</body>
+</html>
